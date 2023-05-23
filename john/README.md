@@ -4,7 +4,7 @@
 ## State machine for curtains
 
 ```mermaid
-stateDiagram
+stateDiagram-v2
     direction TB
     [*] --> IDLE
     IDLE --> OPEN_UNTIL_LIMIT_HIT: Open Button pressed,debounced
