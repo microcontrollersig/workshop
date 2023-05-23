@@ -6,12 +6,19 @@
 ```mermaid
 stateDiagram
     direction LR
-    [*] --> A
-    A --> B
-    B --> C
-    state B {
+    [*] --> IDLE
+    IDLE --> OPEN_UNTIL_LIMIT_HIT: Open button pressed,debounced
+    IDLE --> CLOSE_UNTIL_LIMIT_HIT: Close button pressed,debounced
+    OPENING --> IDLE: Open button hit again
+    CLOSING --> IDLE: Close button hit again
+    OPENING --> OPENED
+    OPENED --> CLOSING
+    state OPEN_UNTIL_LIMIT_HIT {
       direction LR
-      a --> b
+      START_OPENING --> OPENING: Opening commenced
     }
-    B --> D
+    state CLOSE_UNTIL_LIMIT_HIT {
+      direction LR
+      START_CLOSING --> CLOSING: Closing commenced
+    }    
 ```
