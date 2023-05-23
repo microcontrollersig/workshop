@@ -9,10 +9,10 @@ stateDiagram
     [*] --> IDLE
     IDLE --> OPEN_UNTIL_LIMIT_HIT: Open button pressed,debounced
     IDLE --> CLOSE_UNTIL_LIMIT_HIT: Close button pressed,debounced
-    OPENING --> IDLE: Open button hit again
-    CLOSING --> IDLE: Close button hit again
+    OPENING --> IDLE: Open button pressed again
+    CLOSING --> IDLE: Close button pressed again
     OPENING --> OPENED
-    OPENED --> CLOSING
+    OPENED --> CLOSING: Close button pressed
     state OPEN_UNTIL_LIMIT_HIT {
       direction LR
       START_OPENING --> OPENING: Opening commenced
