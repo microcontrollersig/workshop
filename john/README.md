@@ -10,7 +10,7 @@ stateDiagram
     IDLE --> OPEN_UNTIL_LIMIT_HIT: Open Button pressed,debounced
     IDLE --> CLOSE_UNTIL_LIMIT_HIT: Close Button pressed,debounced
     OPENING --> IDLE: Open Button pressed
-    CLOSING --> IDLE: Either Close Limit hit or Close button pressed
+    CLOSING --> IDLE: either Close Limit hit or Close button pressed
     OPENING --> OPENED : Open Limit switch hit
     OPENED --> CLOSING: Close Button pressed
     state OPEN_UNTIL_LIMIT_HIT {
