@@ -11,7 +11,7 @@ stateDiagram-v2
     IDLE --> START_CLOSING: Close Button pressed,debounced
     OPENING --> IDLE: Open Button pressed
     CLOSING --> IDLE: either Close Limit hit or Close button pressed
-    OPENING --> OPENED : Open Limit switch hit
+    OPENING --> IDLE: either Open Limit hit or Open Button pressed
     OPENED --> CLOSING: Close Button pressed
 START_OPENING --> OPENING: Opening commenced
     
