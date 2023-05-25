@@ -22,8 +22,8 @@ START_OPENING --> OPENING: Opening commenced
 stateDiagram-v2
     [*] --> IDLE
     
-    so: Start Opening
-    sc: Start Closing
+    so: START_OPENING
+    sc: START_CLOSING
     
     state fork_state <<fork>>
       IDLE --> fork_state
@@ -35,7 +35,6 @@ stateDiagram-v2
       state join_state <<join>>
       OPENING --> join_state
       CLOSING --> join_state
-      join_state --> State4
-      State4 --> [*]
+      join_state --> IDLE 
 ```
 
