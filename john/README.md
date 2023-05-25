@@ -16,3 +16,26 @@ START_OPENING --> OPENING: Opening commenced
       START_CLOSING --> CLOSING: Closing commenced
   
 ```
+
+```mermaid
+
+stateDiagram-v2
+    [*] --> IDLE
+    
+    so: Start Opening
+    sc: Start Closing
+    
+    state fork_state <<fork>>
+      IDLE --> fork_state
+      fork_state --> so
+      fork_state --> sc
+      so --> OPENING 
+      sc --> CLOSING
+
+      state join_state <<join>>
+      OPENING --> join_state
+      CLOSING --> join_state
+      join_state --> State4
+      State4 --> [*]
+```
+
