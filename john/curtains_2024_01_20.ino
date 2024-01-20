@@ -1,13 +1,8 @@
 /*
- *  Curtain_DC_7--TinkerCad is designed to use a DC Motor 
+ *  Curtain_DC_8--TinkerCad is designed to use a DC Motor 
  *   and limit switches to open and close curtains. 
  *   It was developed and debuged using TinkerCad
  
-CHANGES to v3
-1. Can now press and hold button rather than quick press as before.
-   Inconvenient for Sandy.
-
-
 CHANGES to v2
 
 1. backoff too quick, put delay before reversing
@@ -91,10 +86,9 @@ const int backoffTimeMillis = 50;
 // Delay for changing direction of motor when backing off
 const int changeDirectionDelay = 50;
 
+
 // Delay so that Sandy can press and hold the button, not quick press
 const int pressAndHoldDelay = 2000;
-
-
 
 void setup() {
   // Set motor B control pins to outputs
@@ -167,13 +161,13 @@ void idle_state() {
 void start_opening() {
   start_motor_opening();
   programState = OPENING;
-
-  delay(pressAndHoldDelay);
+  delay(pressAndHoldDelay );
 }
 
 void start_closing() {
   start_motor_closing();
   programState = CLOSING;
+ delay(pressAndHoldDelay ); 
 }
 
 void opening_state() {
@@ -208,12 +202,11 @@ void closing_state() {
 void loop() {
   switch (programState) {
     case IDLE:
-      
       idle_state();
       break;
 
     case START_OPENING:
-      //Serial.println("start opening state");
+ //   Serial.print("start opening state");
       start_opening();
       break;
 
@@ -222,7 +215,7 @@ void loop() {
       break;
 
     case OPENING:
-      //Serial.println("curtain opening state");
+//     Serial.print("curtain opening state");   
       opening_state();
       break;
 
