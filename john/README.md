@@ -1,6 +1,9 @@
 
 # John's projects
 
+## State machine for clapper
+
+
 ```mermaid
 %%===========================================================
 %% File: clapper_fsm.mmd
